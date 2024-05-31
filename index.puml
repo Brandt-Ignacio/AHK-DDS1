@@ -1,0 +1,62 @@
+@startuml
+class Ciudad{
+  nombre;
+  aereopuertos;
+}
+
+class Aereopuerto{
+  nombre;
+}
+  Ciudad -> Aereopuerto
+
+class Viaje{
+  vuelos;
+  escalas;
+}
+
+class Escala{
+  aereopuerto;
+  duracionAproxEnMin;
+}
+Viaje -> Vuelo: *
+Escala -> Aereopuerto
+
+
+class Vuelo{
+  pasajeros;
+  tripulacion;
+  avion;
+  fechaHoraPartida;
+  aereopuertoSalida;
+  aereopuertoDestino;
+}
+Vuelo -> Aereopuerto
+
+class Pasajero{
+  nombre;
+  Pasajero;
+}
+Vuelo -> Pasajero: *
+
+class Empleado{
+  tipo;
+  nombre;
+  apellido;
+}
+Vuelo -> Empleado: * 
+
+class Avion{
+  cantAsientos;
+  descripcion;
+}
+
+class Aereolinea{
+  vuelos;
+}
+Vuelo -> Aereolinea
+Vuelo -> Avion
+Empleado -> Aereolinea
+@enduml
+
+Programar este diagrama (sin metodos)
+Subir a nuevo repositorio
